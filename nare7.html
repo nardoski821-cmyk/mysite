@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0; background: #dbe3eb; display: flex; justify-content: center; align-items: center; height: 100vh; font-family: 'Arial', sans-serif; }
+        .card { width: 320px; height: 500px; background: white; padding: 20px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-radius: 15px; }
+        
+        /* گرنگ: ڕێکخستنی سڵایدەر */
+        .slider { width: 250px; height: 250px; margin: 20px auto; overflow: hidden; position: relative; border-radius: 10px; background: #ddd; }
+        .slides { display: flex; width: 500%; transition: 0.5s ease-in-out; height: 100%; }
+        .slides img { width: 250px; height: 250px; object-fit: cover; flex-shrink: 0; }
+        
+        button { background: #c3a673; border: none; color: white; padding: 10px 20px; cursor: pointer; border-radius: 8px; margin: 5px; font-size: 16px; }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h2 style="color: #1b365d;">بیرەوەریێن مە</h2>
+        <div class="slider">
+            <div class="slides" id="slideBox">
+                <img src="IMG_2574.jpg">
+                <img src="IMG_2575.jpg">
+                <img src="IMG_2576.jpg">
+                <img src="IMG_2577.jpg">
+                <img src="IMG_2578.jpg">
+            </div>
+        </div>
+        <button onclick="nextSlide()">ببه ره خي 🥹</button>
+        <br>
+      <button onclick="window.location.href='Nama.html'" style="background: #1b365d;"> لاپەڕێ دیفدا فه كه</button>
+
+    </div>
+
+    <script>
+        let counter = 0;
+        function nextSlide() {
+            counter++;
+            if (counter > 4) counter = 0;
+            // گۆڕینی وێنەکان بەپێی ڕێژەی سەدی
+            document.getElementById('slideBox').style.transform = 'translateX(' + (counter * 20) + '%)';
+        }
+    </script>
+</body>
+</html>
